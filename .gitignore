@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.idea/
+.vscode/
+local.settings.json
+.azurite/
+__azurite_db*
+__blobstorage__/
+__queuestorage__/
