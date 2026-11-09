@@ -1,0 +1,14 @@
+*.ts
+!dist/**
+.git*
+.vscode
+.nvmrc
+coverage
+src
+test
+local.settings.json
+local.settings.example.json
+tsconfig*.json
+vitest.config.ts
+eslint.config.js
+.dependency-cruiser.cjs

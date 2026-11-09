@@ -1,0 +1,36 @@
+{
+  "name": "payflow-functions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Azure Functions do PayFlow: calculate-fees (HTTP Trigger) e deliver-webhook (Service Bus Trigger)",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "npm run test:architecture && npm run test:unit",
+    "test:unit": "vitest run",
+    "test:architecture": "depcruise src --config .dependency-cruiser.cjs",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.17.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "dependency-cruiser": "^18.7.0",
+    "eslint": "^10.13.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.0.5"
+  }
+}
